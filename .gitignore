@@ -12,3 +12,8 @@ docs/
 
 # Dotenv file
 .env
+
+# Dependencies installed via forge install --no-git
+lib/ccip/
+lib/openzeppelin-contracts/
+lib/chainlink-local/

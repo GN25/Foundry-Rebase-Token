@@ -28,6 +28,12 @@ jobs:
       - name: Show Forge version
         run: forge --version
 
+      - name: Install dependencies
+        run: |
+          forge install smartcontractkit/ccip@v2.17.0-ccip1.5.16 --no-git
+          forge install OpenZeppelin/openzeppelin-contracts@v5.1.0 --no-git
+          forge install smartcontractkit/chainlink-local@v0.2.7-beta --no-git
+
       - name: Run Forge fmt
         run: forge fmt --check
 
