@@ -40,6 +40,27 @@ contract CrossChainTest is Test {
     address user = makeAddr("user");
 
     function setUp() public {
+        // Skip test if RPC URLs are not configured (e.g., in CI)
+        try vm.envString("SEPOLIA_RPC_URL") returns (
+            string memory
+        ) {
+        // RPC URL exists, continue with test
+        }
+        catch {
+            vm.skip(true);
+            return;
+        }
+
+        try vm.envString("ARB_SEPOLIA_RPC_URL") returns (
+            string memory
+        ) {
+        // RPC URL exists, continue with test
+        }
+        catch {
+            vm.skip(true);
+            return;
+        }
+
         sepoliaFork = vm.createSelectFork("sepolia-eth");
         arbSepoliaFork = vm.createSelectFork("arb-sepolia");
 
