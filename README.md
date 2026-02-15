@@ -25,6 +25,15 @@ This project implements a rebase token system with the following features:
 - ✅ Role-based access control for minting and burning
 - ✅ Comprehensive test suite (unit tests, fuzz tests, cross-chain tests)
 
+## Validation Snapshot (Feb 2026)
+
+- `forge test`: **10/10 tests passed** (unit + fuzz + cross-chain)
+- Fuzz campaign depth: **8 fuzz tests**, each with **256 runs**
+- `forge coverage --report summary --ir-minimum`: core contract coverage
+	- `src/RebaseToken.sol`: **95.74% lines**, **95.45% statements**, **100% funcs**
+	- `src/RebaseTokenPool.sol`: **100% lines/statements/funcs**
+	- `src/Vault.sol`: **93.75% lines**, **92.86% statements**, **100% funcs**
+
 ## Prerequisites
 
 - [Foundry](https://book.getfoundry.sh/getting-started/installation)
